@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "start": "node app.js",
+    "dev": "nodemon"
   },
   "dependencies": {
     "@prisma/client": "^5.13.0",

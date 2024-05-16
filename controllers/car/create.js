@@ -1,11 +1,11 @@
-import carModel from '../models/carModel.js'
+import carModel from '../../models/carModel.js'
 
 const create = async(req,res) => {
     try{
         const car = req.body
         const newCar = await carModel.create(car)
         return res.json({
-            sucess: `produto ${newProduct.id} criado com sucesso`,
+            sucess: `produto ${newCar.idcar} criado com sucesso`,
             car: newCar
         })
     }catch(error){

@@ -8,4 +8,9 @@ const create = async(car) =>{
     })
 }
 
-export default {create}
+const getAll = async() => {
+    return await prisma.car.findMany()
+}
+
+
+export default {create, getAll}
