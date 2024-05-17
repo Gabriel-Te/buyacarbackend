@@ -14,11 +14,19 @@ const getAll = async() => {
 
 const getById = async(idcar) => {
     return await prisma.car.findUnique({
-        where: {idcar: parseInt(idcar)}
+        where: {
+            idcar
+        }
+    })
+}
+
+const remove = async(idcar) =>{
+    return await prisma.car.delete({
+        where: {
+            idcar
+        }
     })
 }
 
 
-
-
-export default {create, getAll, getById,}
+export default {create, getAll, getById, remove}
