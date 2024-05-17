@@ -12,5 +12,13 @@ const getAll = async() => {
     return await prisma.car.findMany()
 }
 
+const getById = async(idcar) => {
+    return await prisma.car.findUnique({
+        where: {idcar: parseInt(idcar)}
+    })
+}
 
-export default {create, getAll}
+
+
+
+export default {create, getAll, getById,}
