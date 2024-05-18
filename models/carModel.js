@@ -28,5 +28,17 @@ const remove = async(idcar) =>{
     })
 }
 
+const edit = async(car) => {
+    return await prisma.car.update({
+        where: {
+            idcar: car.idcar
+        },
+        data: {
+            name: car.name,
+            price : car.price,
+            image : car.image
+        }
+    })
+}
 
-export default {create, getAll, getById, remove}
+export default {create, getAll, getById, remove, edit}
