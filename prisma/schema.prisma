@@ -9,7 +9,7 @@ datasource db {
 
 model car {
   idcar Int     @id @default(autoincrement())
-  name  String? @db.VarChar(45)
-  price String? @db.VarChar(45)
-  image String? @db.VarChar(45)
+  name  String? @db.VarChar(200)
+  price String? @db.VarChar(200)
+  image String? @db.VarChar(200)
 }
