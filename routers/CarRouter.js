@@ -10,7 +10,7 @@ const router = express.Router()
 router.get('/listAll', listAll)
 router.get('/getById/:idcar', getById)
 router.post('/create', create)
-router.put('/edit/:id', edit)
+router.put('/edit/:idcar', edit)
 router.delete('/remove/:idcar', remove)
 
 

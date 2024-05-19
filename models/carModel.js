@@ -35,8 +35,9 @@ const edit = async(car) => {
         },
         data: {
             name: car.name,
-            price : car.price,
-            image : car.image
+            price: car.price,
+            image: car.image
+
         }
     })
 }
