@@ -1,6 +1,6 @@
 import carModel from "../../models/carModel.js"
 
-const getById = async (req,res) => {
+const getById = async (req, res) => {
     try {
         const idcar = req.params.idcar
         const car = await carModel.getById(+idcar)

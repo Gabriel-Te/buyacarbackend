@@ -1,6 +1,6 @@
 import carModel from "../../models/carModel.js";
 
-const remove = async(req,res) => {
+const remove = async (req, res) => {
     try {
         const idcar = req.params.idcar
         const removeCar = await carModel.remove(+idcar)
