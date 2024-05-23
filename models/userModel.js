@@ -2,11 +2,21 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-const create = async (user) => {
-    return await prisma.user.create({
-        data: user
-    })
-}
+const create = async (userData) => {
+    try {
+        return await prisma.user.create({
+            data: userData
+        });
+    } catch (error) {
+        console.error('Erro ao criar usuário:', error);
+        throw error;
+    }
+};
+
+const findUserByUsername = async (username) => {
+    return await prisma.user.findUnique({ where: { username: username } });
+  };
+
 
 const getAll = async () => {
     return await prisma.user.findMany()
@@ -40,4 +50,4 @@ const edit = async (user) => {
     })
 }
 
-export default { create, getAll, getById, remove, edit }
+export default { create, getAll, getById, remove, edit, findUserByUsername}

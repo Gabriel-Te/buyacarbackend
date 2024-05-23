@@ -20,7 +20,7 @@ model car {
 
 model user {
   iduser   Int     @id @unique(map: "iduser_UNIQUE") @default(autoincrement())
-  username String? @db.VarChar(45)
+  username String? @unique(map: "username_UNIQUE") @db.VarChar(45)
   password String? @db.VarChar(45)
   car      car[]
 }
