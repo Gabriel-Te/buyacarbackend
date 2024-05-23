@@ -4,14 +4,15 @@ import listAll from '../controllers/car/listAll.js'
 import getById from '../controllers/car/getById.js'
 import remove from '../controllers/car/remove.js'
 import edit from '../controllers/car/edit.js'
+import authMiddleware from '../middlewares/authMiddleware.js'
 
 const router = express.Router()
 
 router.get('/listAll', listAll)
 router.get('/getById/:idcar', getById)
-router.post('/create', create)
-router.put('/edit/:idcar', edit)
-router.delete('/remove/:idcar', remove)
+router.post('/create',authMiddleware, create)
+router.put('/edit/:idcar',authMiddleware, edit)
+router.delete('/remove/:idcar',authMiddleware, remove)
 
 
 export default router

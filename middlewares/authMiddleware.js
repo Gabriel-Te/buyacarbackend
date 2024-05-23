@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import jwt, { decode } from 'jsonwebtoken';
 import { JWT_SECRET } from '../config.js';
 
 const authMiddleware = (req, res, next) => {
@@ -15,5 +15,4 @@ const authMiddleware = (req, res, next) => {
     return res.status(401).json({ error: 'Token inválido' });
   }
 };
-
 export default authMiddleware;
