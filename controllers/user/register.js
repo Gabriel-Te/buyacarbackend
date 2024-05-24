@@ -7,6 +7,7 @@ import generateToken from '../../middlewares/generateToken.js'
 const register = async(req,res) => {
     try{
         const {username, password} = req.body
+        const result = userModel.validateUserToCreate()
 
         const hashedPassword = await bcrypt.hash(password, 10)
 
