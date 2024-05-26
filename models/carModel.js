@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+import {z} from 'zod'
 
 const prisma = new PrismaClient()
 
@@ -75,4 +76,4 @@ const edit = async (car) => {
     })
 }
 
-export default { create, getAll, getById, remove, edit, validateCarToCreate, validateCarToLogin, validateCarToUpdate }
+export default { create, getAll, getById, remove, edit, validateCarToCreate, validateCarToUpdate }
