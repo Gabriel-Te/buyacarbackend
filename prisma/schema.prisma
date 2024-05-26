@@ -12,15 +12,10 @@ model car {
   name        String? @db.VarChar(200)
   price       String? @db.VarChar(200)
   image       String? @db.VarChar(500)
-  user_iduser Int
-  user        user    @relation(fields: [user_iduser], references: [iduser], onDelete: NoAction, onUpdate: NoAction, map: "fk_car_user")
-
-  @@index([user_iduser], map: "fk_car_user_idx")
 }
 
 model user {
   iduser   Int     @id @unique(map: "iduser_UNIQUE") @default(autoincrement())
   username String? @unique(map: "username_UNIQUE") @db.VarChar(45)
   password String? @db.VarChar(45)
-  car      car[]
 }

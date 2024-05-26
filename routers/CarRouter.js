@@ -10,9 +10,9 @@ const router = express.Router()
 
 router.get('/listAll', listAll)
 router.get('/getById/:idcar', getById)
-router.post('/create',authMiddleware, create)
-router.put('/edit/:idcar',authMiddleware, edit)
-router.delete('/remove/:idcar',authMiddleware, remove)
+router.post('/create', create)
+router.put('/edit/:idcar', edit)
+router.delete('/remove/:idcar', remove)
 
 
 export default router

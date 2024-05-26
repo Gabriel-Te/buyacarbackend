@@ -4,9 +4,6 @@ const create = async(req,res) => {
     try{
         const {name, price, image} = req.body;
 
-
-
-
         const newCar = await carModel.create({
             name: name,
             price: price,
