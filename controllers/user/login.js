@@ -4,6 +4,13 @@ import bcrypt from 'bcryptjs'
 
 const login = async (req, res) => {
     const { username, password } = req.body;
+
+    const resultvalidate = userModel.validateUserToLogin({username, password})
+    if(!resultvalidate.success){
+        return res.status(400).json({
+            error: `Dados de Login Inválido`,
+        })
+    }
   
     try {
       const user = await userModel.findUserByUsername(username);

@@ -4,6 +4,13 @@ const create = async(req,res) => {
     try{
         const {name, price, image} = req.body;
 
+        const resultvalidate = carModel.validateCarToCreate({name, price, image})
+        if(!resultvalidate.success){
+            return res.status(400).json({
+                error: `Dados de Cadastro Inválido`,
+            })
+        }
+
         const newCar = await carModel.create({
             name: name,
             price: price,

@@ -7,7 +7,12 @@ import generateToken from '../../middlewares/generateToken.js'
 const register = async(req,res) => {
     try{
         const {username, password} = req.body
-        const result = userModel.validateUserToCreate()
+        const resultvalidate = userModel.validateUserToCreate({username, password})
+        if(!resultvalidate.success){
+            return res.status(400).json({
+                error: `Dados de Cadastro Inválido`,
+            })
+        }
 
         const hashedPassword = await bcrypt.hash(password, 10)
 
