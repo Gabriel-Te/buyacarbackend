@@ -40,7 +40,7 @@ const remove = async (iduser) => {
 }
 
 const edit = async (user) => {
-    return await prisma.car.update({
+    return await prisma.user.update({
         where: {
             iduser: user.iduser
         },
